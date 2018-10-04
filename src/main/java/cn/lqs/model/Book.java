@@ -5,6 +5,7 @@ import java.io.Serializable;
 /**
  * Created by LiQingsong on 2018/9/30.
  */
+//用于git测试
 public class Book implements Serializable {
     private Integer id;
     private String title;
