@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS db.user;
+CREATE TABLE db.user(
+  id INT AUTO_INCREMENT PRIMARY KEY
+  COMMENT 'id PK',
+  email VARCHAR(255) NOT NULL COMMENT 'email',
+  username VARCHAR(255) NOT NULL COMMENT 'username',
+  password VARCHAR(255) NOT NULL comment 'password'
+);
+
+Drop TABLE IF EXISTS db.books;
+CREATE TABLE db.books(
+  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'id PK',
+  title VARCHAR(255) NOT NULL COMMENT 'title NN',
+  author VARCHAR(255) NOT NULL COMMENT 'author NN',
+  date DATE NOT NULL COMMENT 'date NN',
+  price DOUBLE NOT NULL COMMENT 'price NN',
+  amount INT NOT NULL DEFAULT 0 NOT NULL COMMENT 'amount NN'
+);
+
+DROP TABLE IF EXISTS db.ips;
+CREATE TABLE db.ips(
+  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'id pk',
+  min VARCHAR(255) NOT NULL COMMENT 'min NN',
+  max VARCHAR(255) NOT NULL COMMENT 'max NN',
+  geo VARCHAR(255) NOT NULL COMMENT 'geo NN'
+
+);
+
+SELECT * FROM ips;
+
+TRUNCATE TABLE  ips;
+
+SELECT count(*) FROM ips;
+
+show VARIABLES  LIKE 'coll%';
+
+ALTER TABLE db.user ADD CONSTRAINT email UNIQUE (email);
+
+SHOW CREATE table user;
+
+INSERT INTO db.user VALUES (null,'110@qq.com','李青松',md5('123'));
+SELECT * FROM user;
+
+TRUNCATE TABLE user;
+
+SELECT inet_aton('1.1.1.1');
